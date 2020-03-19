@@ -1,6 +1,8 @@
 package com.soft1851.spring.ioc.entity;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author su
@@ -14,16 +16,35 @@ public class Student {
     private String name;
     private List<String> hobbies;
     private List<Phone> phones;
+    private Map<String,String> car;
+    private Set<String> computer;
 
-    public Student() {
-
+    public Map<String, String> getCar() {
+        return car;
     }
 
-    public Student(Integer id, String name, List<String> hobbies, List<Phone> phones) {
+    public void setCar(Map<String, String> car) {
+        this.car = car;
+    }
+
+    public Set<String> getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Set<String> computer) {
+        this.computer = computer;
+    }
+
+    public Student() {
+    }
+
+    public Student(Integer id, String name, List<String> hobbies, List<Phone> phones, Map<String, String> car, Set<String> computer) {
         this.id = id;
         this.name = name;
         this.hobbies = hobbies;
         this.phones = phones;
+        this.car = car;
+        this.computer = computer;
     }
 
     public Integer getId() {
@@ -65,6 +86,8 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", hobbies=" + hobbies +
                 ", phones=" + phones +
+                ", car=" + car +
+                ", computer=" + computer +
                 '}';
     }
 }

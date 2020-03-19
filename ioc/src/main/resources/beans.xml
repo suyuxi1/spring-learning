@@ -22,5 +22,19 @@
                 <ref bean="phone2"/>
             </list>
         </property>
+        <property name="computer">
+            <set>
+                <value>Dell</value>
+                <value>Mac</value>
+                <value>hp</value>
+            </set>
+        </property>
+        <property name="car">
+            <map>
+                <entry key="1" value="奔驰"/>
+                <entry key="2" value="宝马"/>
+                <entry key="3" value="柯尼塞格"/>
+            </map>
+        </property>
     </bean>
 </beans>
