@@ -63,4 +63,6 @@ public class ForumDaoTest {
         List<Forum> forums = forumDao.selectAll();
         assertEquals(3, forums.size());
     }
+
+
 }
