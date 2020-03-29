@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>话题</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        margin: 50px 0 50px 0;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .container {
+        width: 70%;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex: 1 1 33.3%;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 30%;
+        height: 150px;
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+
+    }
+
+    .card-img {
+        width: 25%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .card-content {
+        width: 70%;
+        height: 100%;
+    }
+
+    h3 {
+        margin: 15px 0 15px 0;
+        font-weight: bold;
+    }
+
+    span {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .followed {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .follow {
+        color: forestgreen;
+    }
+
+</style>
+<body>
+<div class="container">
+    <h1>全部话题</h1>
+    <div class="content">
+        <div class="card" th:each="topic:${topics}">
+            <div class="card-img">
+                <img th:src="${topic.topicIcon}" th:title="${topic.description}" alt="" src="">
+            </div>
+            <div class="card-content">
+                <h3 th:text="${topic.topicName}"></h3>
+                <span th:text="${topic.followersCount}"></span>
+                <span>关注 · </span>
+                <span th:text="${topic.followersCount}"></span>
+                <span>沸点</span>
+                <p th:if="!${topic.followed}" class="follow">+ 关注</p>
+                <p th:if="${topic.followed}" class="followed">已关注</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

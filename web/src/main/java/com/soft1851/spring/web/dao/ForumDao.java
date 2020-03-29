@@ -55,6 +55,7 @@ public interface ForumDao {
      */
     List<Forum> selectAll();
 
+    int count();
 
 
 }

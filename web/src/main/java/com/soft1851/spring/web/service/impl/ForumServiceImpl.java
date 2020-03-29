@@ -25,4 +25,16 @@ public class ForumServiceImpl implements ForumService {
     public List<Forum> selectAll() {
         return forumDao.selectAll();
     }
+
+    @Override
+    public int insert(Forum forum) {
+        return forumDao.insert(forum);
+    }
+
+    @Override
+    public int count() {
+        return forumDao.count();
+    }
+
+
 }

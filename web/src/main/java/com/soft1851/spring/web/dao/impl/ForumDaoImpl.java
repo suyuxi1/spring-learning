@@ -83,4 +83,10 @@ public class ForumDaoImpl implements ForumDao {
         String sql = "SELECT * FROM t_forum ";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Forum.class));
     }
+
+    @Override
+    public int count() {
+        String sql = "SELECT COUNT(*) FROM t_forum";
+        return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
 }
