@@ -18,8 +18,6 @@
         <module>web</module>
         <module>web-annotation</module>
         <module>mybatis-xml</module>
-        <module>mybatis-xml</module>
-        <module>mybatis-xml</module>
     </modules>
 
     <properties>
